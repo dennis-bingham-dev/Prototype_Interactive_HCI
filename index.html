@@ -5,12 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Timer</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="timer.js"></script>
   </head>
   <body>
     <!-- Div where all other page content will reside -->
     <div id="content">
-
+      <nav>
+        <ul>
+          <li class="nav-item">Timer 1</li>
+          <li class="nav-item">Timer 2</li>
+          <li class="nav-item">Timer 3</li>
+          <li class="nav-item"><i class="material-icons">add_circle_outline</i></li>
+        </ul>
+      </nav>
+      <!-- Main Timer location -->
+      <div id="timer">
+        <div class="circle">
+          <div class="inner-circle">
+            <span id="inner-content">00:00:00</span>
+          </div>
+        </div>
+      </div>
+      <!-- Lap Button location -->
+      <div id="lap">
+        <button>LAP</button>
+      </div>
+      <!-- Play and Pause Button location -->
+      <div id="start-stop">
+        <button><i class="material-icons play">play_arrow</i></button>
+        <button><i class="material-icons pause">pause</i></button>
+      </div>
+      <!-- Reset Button location -->
+      <div id="reset">
+        <button>RESET</button>
+      </div>
     </div>
   </body>
 </html>
