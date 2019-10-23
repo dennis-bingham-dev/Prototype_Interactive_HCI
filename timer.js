@@ -1,3 +1,4 @@
+// Create variables for storing data
 let mainTimer = document.getElementById('inner-content'),
     play = document.getElementById('play'),
     pause = document.getElementById('pause'),
@@ -7,6 +8,7 @@ let mainTimer = document.getElementById('inner-content'),
     minutes = 0,
     hours = 0;
 
+// function for adding time to the timer.
 function add() {
   seconds++;
   if (seconds >= 60) {
@@ -25,16 +27,20 @@ function add() {
   timer();
 }
 
+// This sets the timeout for the timer to update every second.
 function timer() {
   t = setTimeout(add, 1000);
 }
 
+// this starts the timer.
 play.onclick = timer;
 
+// this pauses the timer and clears the timeout for the time being.
 pause.onclick = () => {
   clearTimeout(t);
 }
 
+// this resets the timer and sets the appropriate variables.
 reset.onclick = () => {
   mainTimer.textContent = "00:00:00";
   seconds = 0;
