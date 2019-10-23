@@ -11,7 +11,12 @@
 }
 
 .nav-item {
+  margin-top: 20px;
   color: rgb(0, 159, 233);
+}
+
+.nav-item:nth-child(4) {
+  line-height: 3;
 }
 
 .material-icons {
@@ -52,23 +57,53 @@
 }
 
 #button-container {
-  margin-top: 10%;
-  margin-bottom: 5%;
+  margin-top: 50px;
+  margin-bottom: 10px;
 }
 
-#lap, #start-stop, #reset {
-  margin-top: 2%;
-  margin-bottom: 2%;
+#lap,
+#start-stop,
+#reset {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-#lap button, #reset button {
+#lap button,
+#reset button {
   padding: 15px 30px;
   border-radius: 5px;
   font-size: 18px;
   border-width: 2px;
 }
 
-#lap button {
+#start-stop button {
+  padding: 7.5px 15px;
+  border-radius: 5px;
+  border-width: 2px;
+}
+
+#lap button,
+#reset button,
+#start-stop button:nth-child(1),
+#start-stop button:nth-child(2) {
+  border-color: rgb(0, 159, 233);
+  background-color: rgb(0, 0, 0);
+  color: rgb(0, 159, 233);
+}
+
+#lap button:hover,
+#reset button:hover,
+#start-stop button:nth-child(1):hover,
+#start-stop button:nth-child(2):hover,
+.play:hover,
+.pause:hover {
+  border-color: rgb(0, 159, 233);
+  background-color: rgb(0, 159, 233);
+  color: rgb(0, 0, 0);
+}
+
+/* Original button colors remove if we like the new ones. */
+/* #lap button {
   border-color: rgb(0, 230, 0);
   background-color: rgb(0, 0, 0);
   color: rgb(0, 230, 0);
@@ -90,12 +125,6 @@
   border-color: rgb(255, 50, 50);
   background-color: rgb(255, 50, 50);
   color: rgb(0, 0, 0);
-}
-
-#start-stop button {
-  padding: 7.5px 15px;
-  border-radius: 5px;
-  border-width: 2px;
 }
 
 #start-stop button:nth-child(1), .play {
@@ -120,4 +149,4 @@
   border-color: rgb(226, 192, 0);
   background-color: rgb(226, 192, 0);
   color: rgb(0, 0, 0);
-}
+} */
