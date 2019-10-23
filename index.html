@@ -7,7 +7,6 @@
     <link rel="shortcut icon" type="image/ico" href="./favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="timer.js"></script>
   </head>
   <body>
     <!-- Div where all other page content will reside -->
@@ -34,8 +33,8 @@
         </div>
         <!-- Play and Pause Button location -->
         <div id="start-stop">
-          <button><i class="material-icons play">play_arrow</i></button>
-          <button><i class="material-icons pause">pause</i></button>
+          <button><i class="material-icons" id="play">play_arrow</i></button>
+          <button><i class="material-icons" id="pause">pause</i></button>
         </div>
         <!-- Reset Button location -->
         <div id="reset">
@@ -43,5 +42,6 @@
         </div>
       </div>
     </div>
+    <script src="timer.js"></script>
   </body>
 </html>
