@@ -28,7 +28,7 @@ function convertTimeToDisplay(time) {
   let millis = time % 1000;
   let seconds = Math.floor(time / 1000) % 60;
   let minutes = Math.floor(time / 1000 / 60) % 60;
-  let hours = Math.floor(time / 1000 / 3600) % 60;
+  let hours = Math.floor(time / 1000 / 3600) % 24;
   
   let hourString = `${(hours < 10) ? '0' : ''}${hours}`;
   let minuteString = `${(minutes < 10) ? '0' : ''}${minutes}`;
