@@ -108,6 +108,10 @@ body {
   border-radius: var(--border-radius);
 }
 
+.lap-display {
+  color: var(--main-fg-color);
+}
+
 #list-organizer li {
   color: rgb(255, 255, 255);
 }

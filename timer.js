@@ -24,8 +24,7 @@ function generateTimer() {
 let focusedTimer = generateTimer();
 timers.push(focusedTimer);
 
-function updateTimerView(timer) {
-  let time = timer.elapsedTimeSincePause;
+function convertTimeToDisplay(time) {
   let millis = time % 1000;
   let seconds = Math.floor(time / 1000) % 60;
   let minutes = Math.floor(time / 1000 / 60) % 60;
@@ -36,7 +35,11 @@ function updateTimerView(timer) {
   let secondString = `${(seconds < 10) ? '0' : ''}${seconds}`;
   let millisString = `${(millis < 100) ? '0' : ''}${(millis < 10) ? '0' : ''}${millis}`;
   
-  mainTimer.innerText = `${hourString}:${minuteString}:${secondString}.${millisString}`;
+  return `${hourString}:${minuteString}:${secondString}.${millisString}`;
+}
+
+function updateTimerView(timer) {
+  mainTimer.innerText = convertTimeToDisplay(timer.elapsedTimeSincePause);
 }
 
 function updateTimer(timer) {
@@ -72,41 +75,20 @@ pause.addEventListener('click', () => {
 
 // this will add the laps to the lap section of the prototype.
 lap.addEventListener('click', () => {
-  if (document.getElementById('list-organizer') === null) {
-    let ul = document.createElement('ul');
-    ul.setAttribute('id', 'list-organizer');
-
-    let li = document.createElement('li');
-    li.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00")
-                      + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00")
-                      + ":" + (seconds > 9 ? seconds : "0" + seconds);
-
-    ul.appendChild(li);
-
-    lapList.appendChild(ul);
-  } else {
-    let li = document.createElement('li');
-    li.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00")
-                      + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00")
-                      + ":" + (seconds > 9 ? seconds : "0" + seconds);
-
-    document.getElementById('list-organizer').appendChild(li);
+  if (focusedTimer.intervalID !== null) {
+    let divLap = document.createElement('div');
+    divLap.classList.add('lap-display');
+    divLap.innerText = convertTimeToDisplay(focusedTimer.elapsedTimeSincePause);
+    lapList.appendChild(divLap);
   }
 });
 
-// delete lap list children.
-function deleteChildren(e) {
-  e.innerHTML = '';
-}
-
 // this resets the timer and sets the appropriate variables.
 reset.addEventListener('click', () => {
-  clearTimeout(t);
-  mainTimer.textContent = "00:00:00";
-  seconds = 0;
-  minutes = 0;
-  hours = 0;
-  let ul = document.getElementById('list-organizer');
-  deleteChildren(ul);
+  mainTimer.innerText = '00:00:00.000';
+  lapList.innerHTML = '';
+  
+  stopTimer(focusedTimer);
+  focusedTimer = generateTimer();
 });
 
