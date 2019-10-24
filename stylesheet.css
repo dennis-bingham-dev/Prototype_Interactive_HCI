@@ -127,8 +127,8 @@ button:hover {
   background-color: var(--main-fg-color);
 }
 
-button:hover i {
-  colo00r: var(--main-bg-color);
+button:hover .material-icons {
+  color: var(--main-bg-color);
 }
 
 #lap button,
