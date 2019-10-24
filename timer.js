@@ -48,19 +48,23 @@ function updateTimer(timer) {
 
 // This sets the timeout for the timer to update every second.
 function startTimer(timer) {
-  timer.startTime = (new Date()).valueOf();
-  
-  timer.intervalID = setInterval(() => {
-    updateTimer(timer);
-    updateTimerView(timer);
-  }, 10);
+  if (timer.intervalID === null) {
+    timer.startTime = (new Date()).valueOf();
+    
+    timer.intervalID = setInterval(() => {
+      updateTimer(timer);
+      updateTimerView(timer);
+    }, 10);
+  }
 }
 
 function stopTimer(timer) {
-  clearInterval(timer.intervalID);
-  timer.intervalID = null;
-  timer.startTime = null;
-  timer.runningTotal = timer.elapsedTimeSincePause;
+  if (timer.intervalID !== null) {
+    clearInterval(timer.intervalID);
+    timer.intervalID = null;
+    timer.startTime = null;
+    timer.runningTotal = timer.elapsedTimeSincePause;
+  }
 }
 
 // this starts the timer.
