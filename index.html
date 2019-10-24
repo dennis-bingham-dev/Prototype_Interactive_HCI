@@ -11,21 +11,31 @@
   <body>
     <!-- Div where all other page content will reside -->
     <div id="content">
-      <nav>
-        <!-- Separate timers will eventually go here -->
-        <span class="nav-item">00:00:00</span>
-        <span class="nav-item">00:00:00</span>
-        <span class="nav-item">00:00:00</span>
-        <span class="nav-item"><i class="material-icons">add_circle_outline</i></span>
-      </nav>
+      <!-- Timers -->
+      <div id="timer-bar">
+        <div id="timer-list">
+          <!-- Separate timers will eventually go here -->
+          <!--
+          <span class="nav-item">00:00:00</span>
+          -->
+        </div>
+        <div class="nav-item" id="new-timer"><i class="material-icons">add_circle_outline</i></div>
+      </div>
+      
       <!-- Main Timer location -->
       <div id="timer">
         <div class="circle">
           <div class="inner-circle">
-            <span id="inner-content">00:00:00</span>
+            <div id="inner-content">00:00:00</div>
           </div>
         </div>
       </div>
+      
+      <!-- Laps List container -->
+      <div id="lap-list">
+      </div>
+      
+      <!-- Buttons -->
       <div id="button-container">
         <!-- Lap Button location -->
         <div id="lap">
@@ -41,6 +51,7 @@
           <button>RESET</button>
         </div>
       </div>
+      
     </div>
     <script src="timer.js"></script>
   </body>
