@@ -24,7 +24,7 @@ body {
 #content {
   display: flex;
   flex-direction: column;
-  
+
   width: 300px;
   height: calc(100% - 10px);
   font-family: Arial, Helvetica, sans-serif;
@@ -106,6 +106,10 @@ body {
   overflow-y: auto;
   height: 100px;
   border-radius: var(--border-radius);
+}
+
+#list-organizer li {
+  color: rgb(255, 255, 255);
 }
 
 #lap,
