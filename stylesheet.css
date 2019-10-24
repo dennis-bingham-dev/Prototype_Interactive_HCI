@@ -50,6 +50,7 @@ body {
 .nav-item {
   margin-top: 20px;
   color: var(--main-fg-color);
+  cursor: pointer;
 }
 
 #new-timer {
